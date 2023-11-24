@@ -30,8 +30,10 @@ public class PIM {
         for (;;) {
             System.out.print("PIM> ");
             String line = reader.readLine();
+            System.out.print("\n");
             if (line == null) break;
             run(line);
+            System.out.print("\n");
             haveError = false;
         }
     }

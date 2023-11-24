@@ -24,7 +24,7 @@ public class InterpreterCreateScheduleTest {
     void setUp() {
         interpreter = new Interpreter();
         interpreter.setInterpreterPIRs(new HashMap<>());
-        String simulatedUserInput = "3211\n2023-11-25,23:59\n2023-11-24,23:59\n";
+        String simulatedUserInput = "3211\n2028-11-25,23:59\n2028-11-24,23:59\n";
         inContent = new ByteArrayInputStream(simulatedUserInput.getBytes());
         System.setIn(inContent);
 
@@ -46,8 +46,8 @@ public class InterpreterCreateScheduleTest {
         Schedule schedule = (Schedule) pir;
         assertEquals("schedule1", schedule.getIdentifier());
         assertEquals("3211", schedule.getDescription());
-        assertEquals(LocalDateTime.parse("2023-11-25,23:59", formatter), schedule.getStartTime());
-        assertEquals(LocalDateTime.parse("2023-11-24,23:59", formatter), schedule.getAlarmTime());
+        assertEquals(LocalDateTime.parse("2028-11-25,23:59", formatter), schedule.getStartTime());
+        assertEquals(LocalDateTime.parse("2028-11-24,23:59", formatter), schedule.getAlarmTime());
     }
 
     @AfterEach

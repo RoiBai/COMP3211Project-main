@@ -276,7 +276,7 @@ public class Interpreter implements StmtVisitor<Void>, CriteriaVisitor<List<PIR>
         String startTimeStr = readLine("Start time: ", false);
         LocalDateTime startTime;
         if ("test".equals(System.getProperty("environment"))) {
-            startTime = LocalDateTime.parse("2023-11-25,23:59", formatter);
+            startTime = LocalDateTime.parse("2028-11-25,23:59", formatter);
         }
         else{
             startTime = LocalDateTime.parse(startTimeStr, formatter);
@@ -284,7 +284,7 @@ public class Interpreter implements StmtVisitor<Void>, CriteriaVisitor<List<PIR>
         String alarmTimeStr = readLine("Alarm time: ", false);
         LocalDateTime alarmTime;
         if ("test".equals(System.getProperty("environment"))) {
-            alarmTime = LocalDateTime.parse("2023-11-24,23:59", formatter);
+            alarmTime = LocalDateTime.parse("2028-11-24,23:59", formatter);
         }
         else{alarmTime = LocalDateTime.parse(alarmTimeStr, formatter);}
         Schedule schedule = new Schedule(identifier, description, startTime, alarmTime);

@@ -31,6 +31,7 @@ public class Printer implements PrintVisitor<Void> {
     public void printAll(){
         if (PIRs.isEmpty()) throw new PIMError("No PIR created.");
         List<PIR> pirList = new ArrayList<>(PIRs.values());
+        System.out.println("---------------------------------------------------------");
         for (PIR pir :pirList){
             pir.accept(this);
             System.out.println("---------------------------------------------------------");

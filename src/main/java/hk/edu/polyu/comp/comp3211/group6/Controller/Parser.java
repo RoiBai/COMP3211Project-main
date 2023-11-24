@@ -70,12 +70,14 @@ public class Parser {
             if (match(TokenType.SEARCH)) return searchStmt();
             if (match(TokenType.DELETE)) return deleteStmt();
             throw new ParserError("""
-                Commands: create
-                          print
-                          exit
-                          save
-                          load
-                          modify""");
+                Commands: create - Create a PIR.
+                          modify - Modify a specific PIR.
+                          delete - Delete a specific PIR.
+                          print  - Print a specific PIR or all the PIRs.
+                          search - Search for PIRs based on criteria.
+                          save   - Save all the PIRs to a single .pim file.
+                          load   - Load a .pim file.
+                          exit   - Exit the program.""");
         }catch (ParserError e){
             throw new PIMError(e);
         }
@@ -166,7 +168,10 @@ public class Parser {
             Token dataType = previous();
             Token identifier = consume(TokenType.IDENTIFIER, "Expect an identifier for a PIR.");
             return new CreateStmt(dataType, identifier);
-        }else throw new ParserError("create {Note, Task, Schedule, Contact}");
+        }else throw new ParserError("""
+                                    create <PIR type> <Identifier>
+                                    PIR types: Note, Task, Schedule, Contact
+                                    """);
     }
 
     private Stmt printStmt(){
