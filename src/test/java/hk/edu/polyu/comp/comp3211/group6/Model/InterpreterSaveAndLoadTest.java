@@ -54,7 +54,7 @@ public class InterpreterSaveAndLoadTest {
     @Test
     void testSave() throws Exception {
         // 模拟用户输入文件路径
-        String testFilePath = "/Users/roi/Desktop";
+        String testFilePath = "/Users/liuchengju/Desktop";
         ByteArrayInputStream in = new ByteArrayInputStream(testFilePath.getBytes());
         System.setIn(in);
 

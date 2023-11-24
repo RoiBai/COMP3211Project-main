@@ -19,7 +19,6 @@ public class Scanner {
         keywords.put("save", TokenType.SAVE);
         keywords.put("load", TokenType.LOAD);
         keywords.put("delete", TokenType.DELETE);
-        keywords.put("help", TokenType.HELP);
         keywords.put("exit", TokenType.EXIT);
         keywords.put("print", TokenType.PRINT);
         keywords.put("*", TokenType.ALL);

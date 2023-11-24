@@ -2,7 +2,7 @@ package hk.edu.polyu.comp.comp3211.group6.Controller;
 
 public enum TokenType {
     /*Keywords*/
-    CREATE, MODIFY, SEARCH, LOAD, SAVE, DELETE, HELP, EXIT, PRINT,
+    CREATE, MODIFY, SEARCH, LOAD, SAVE, DELETE, EXIT, PRINT,
     NOTE, TASK, SCHEDULE, CONTACT,
     /*Literals*/
     IDENTIFIER, ALL, STRING, DATE,
